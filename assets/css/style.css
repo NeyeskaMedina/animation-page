@@ -1,0 +1,196 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+.container-grid-principal{
+    display: grid;
+    grid-template-areas: 
+    "nav nav"
+    "seccion seccion"
+    "footer footer";
+}
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 4vw;
+    height: 10vh;
+    background-color: rgb(234,234,234);
+}
+main{
+    height: 80vh;
+    width: calc(100vw - 1px);
+}
+article{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    background-color:#e41f1cc8 ;
+    color: white;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+article h1{
+    margin: 0;
+}
+.grid-section{
+    grid-area: seccion;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 80vh;
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    overflow-y: scroll;
+}
+.item-reloj{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: space-between;
+    border: solid 1px gray;
+    width: 85%;
+    margin-bottom: 3vh;
+}
+.item-reloj img{
+    filter: grayscale(80%);
+    transition: filter 1s ease-in;
+}
+.item-reloj img:hover{
+    filter: grayscale(0);
+}
+.box-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+.box-description h5{
+   color: rgb(0, 134, 2);
+}
+.box-description h3, h5{
+    margin: 0;  
+    font-size: 1.5em;  
+    padding-top: 1.5vh;
+}
+.box-description h5{
+padding-bottom: 1.5vh;
+}
+.box-description input{
+    width: 20vw;
+    height: 4vh;
+    border: 0;
+    border-radius: .5em;
+    background-color: rgb(238,30,28);
+    color: white;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 10vh;
+    gap: 1vh;
+    grid-area: footer;
+    text-align: center;
+    background-color: rgb(234,234,234);
+}
+footer a{
+    text-decoration: none;
+    color: rgb(238,30,28);
+    font-size: 0.8em;
+}
+footer a h5{
+    padding: 0;
+}
+/* .icon{
+    display: flex;
+    justify-content: center;
+} */
+@media (min-width:576px){
+    .container-grid-principal{
+        display: grid;
+        grid-template-areas: 
+        "nav seccion"
+        "nav seccion"
+        "footer footer";
+    }
+    nav{
+        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 2vh;
+        padding-right: 0;
+        padding-left: 0;
+        width: 25vw;
+        height: 88vh;
+    }
+    ul{
+        visibility: visible;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+    ul li{
+        padding: 5px;
+    }
+    ul li a{
+        color: rgb(238,30,28);
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 1.5em;
+    }
+    ul li a:hover{
+        color: rgb(235, 32, 28);
+        font-size: 1.8em;
+    }
+    main{
+        height: 90vh;
+        width: calc(75vw - 4px);
+    }
+    .grid-section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 92vh;
+        height: 92vh;
+        width: calc(75vw - 4px);
+    }
+    .item-reloj{
+        height: 80vh;
+        margin: 1vw;
+    }
+    .item-reloj img{
+        width: 100%;
+        height: 70%;
+    }
+    .container-grid-principal a i{
+        visibility: hidden;
+    }
+}
+@media (min-width:900px){
+    .container-grid-principal{
+        display: grid;
+        grid-template-areas: 
+        "nav seccion"
+        "nav seccion"
+        "footer seccion";
+    }
+    .grid-section{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 90vh;
+        height: 100vh;
+    }
+}
